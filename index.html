@@ -1,13 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intelligent Comment Analysis System</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommentIQ - Intelligent Comment Analysis System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>CommentIQ</h1>
+                            <p>Intelligent Comment Analysis System</p>
+                        </div>
+                    </div>
+                    <nav class="nav">
+                        <button class="nav-btn active" data-tab="analyzer">
+                            <i class="fas fa-search"></i>
+                            Analyzer
+                        </button>
+                        <button class="nav-btn" data-tab="analytics">
+                            <i class="fas fa-chart-bar"></i>
+                            Analytics
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <!-- Analyzer Tab -->
+                <div id="analyzer-tab" class="tab-content active">
+                    <!-- Hero Section -->
+                    <div class="hero">
+                        <h2>AI-Powered Comment Analysis</h2>
+                        <p>Automatically detect toxic content, filter spam, analyze sentiment, and categorize feedback to help content creators engage meaningfully with their audience.</p>
+                    </div>
+
+                    <!-- Input Section -->
+                    <div class="input-section">
+                        <div class="section-header">
+                            <i class="fas fa-comment"></i>
+                            <h3>Comment Input</h3>
+                        </div>
+                        <div class="input-content">
+                            <label for="comments-input">Paste comments (one per line) or try our sample data:</label>
+                            <textarea 
+                                id="comments-input" 
+                                placeholder="Enter comments here, one per line..."
+                                rows="6"
+                            ></textarea>
+                            <div class="button-group">
+                                <button id="analyze-custom-btn" class="btn btn-primary">
+                                    <i class="fas fa-upload"></i>
+                                    Analyze Custom
+                                </button>
+                                <button id="analyze-sample-btn" class="btn btn-secondary">
+                                    <i class="fas fa-play"></i>
+                                    Try Sample Data
+                                </button>
+                                <button id="reset-btn" class="btn btn-tertiary">
+                                    <i class="fas fa-redo"></i>
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Section -->
+                    <div id="processing-section" class="processing-section hidden">
+                        <div class="processing-grid">
+                            <!-- Steps Indicator -->
+                            <div class="steps-container">
+                                <div class="section-header">
+                                    <h3>Analysis Pipeline</h3>
+                                </div>
+                                <div id="steps-list" class="steps-list">
+                                    <!-- Steps will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="results-container">
+                                <div class="section-header">
+                                    <h3>Processed Comments (<span id="comment-count">0</span>)</h3>
+                                    <div id="processing-indicator" class="processing-indicator hidden">
+                                        <div class="spinner"></div>
+                                        <span>Processing...</span>
+                                    </div>
+                                </div>
+                                <div id="comments-list" class="comments-list">
+                                    <div class="empty-state">
+                                        <i class="fas fa-comment-slash"></i>
+                                        <p>No comments processed yet. Upload some comments to get started!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="tab-content">
+                    <div class="analytics-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h2>Analytics Dashboard</h2>
+                    </div>
+                    
+                    <div id="analytics-content" class="analytics-content">
+                        <!-- Analytics will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
