@@ -1,0 +1,22 @@
+{
+  "name": "commentiq-analysis-system",
+  "version": "1.0.0",
+  "description": "Intelligent Comment Analysis System for Social Media content creators",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "python -m http.server 8000",
+    "analyze": "python analyzer.py"
+  },
+  "keywords": [
+    "comment-analysis",
+    "social-media",
+    "machine-learning",
+    "content-creators",
+    "sentiment-analysis"
+  ],
+  "author": "CommentIQ Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
